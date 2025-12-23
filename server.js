@@ -14,6 +14,9 @@ const PORT = process.env.PORT || 5000;
 
 connectDB();
 
+app.get('/', (req, res) => {
+    res.send('Welcome to Sabaysis Backend');
+});
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
