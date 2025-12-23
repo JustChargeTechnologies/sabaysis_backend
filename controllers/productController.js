@@ -32,6 +32,7 @@ const createOrUpdateProduct = async (req, res) => {
     if (req.file) {
       const result = await cloudinary.uploader.upload(req.file.path, {
         folder: 'sabaysis/products',
+        resource_type: 'auto',
       });
       imageUrl = result.secure_url;
       fs.unlinkSync(req.file.path);

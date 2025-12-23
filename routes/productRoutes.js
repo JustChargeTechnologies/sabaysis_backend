@@ -8,7 +8,9 @@ const {
   deleteProduct,
 } = require('../controllers/productController');
 
-const upload = multer({ dest: 'uploads/' });
+const os = require('os');
+
+const upload = multer({ dest: os.tmpdir() });
 
 router.get('/', getProducts);
 router.get('/:slug', getProductBySlug);
